@@ -1,16 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <link rel="stylesheet" href="media/leaflet.css" />
+ <link rel="stylesheet" href="media/leaflet.css" type="text/css" />
 <!--[if lte IE 8]>
-    <link rel="stylesheet" href="media/leaflet.ie.css" />
+    <link rel="stylesheet" href="media/leaflet.ie.css"  type="text/css" />
 <![endif]-->
-<script src="media/leaflet.js"></script>
-<script src="media/map.js"></script>
-<script src="media/GPX.js"></script>
-<script src="media/jquery-1.10.2.min.js"></script>
-<script src="media/leaflet.filelayer.js"></script>
-<script src="media/togeojson.js"></script>
-<style>
+<script src="media/leaflet.js" type="text/javascript"</script>
+<script src="media/map.js" type="text/javascript"></script>
+<script src="media/GPX.js" type="text/javascript"></script>
+<script src="media/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="media/leaflet.filelayer.js" type="text/javascript"></script>
+<script src="media/togeojson.js" type="text/javascript"></script>
+<style type="text/css">
 *{font-family:Verdana;}
 #header{width:60%; height:20%; }
 #map{width:100%; height:75%; position:fixed;bottom:0;left:0;}
@@ -20,13 +21,12 @@ form{float:right;}
 </head>
 <body>
 <div id="header">
-
 <h1>GPS Traces visualizer</h1>
 <p>From the folder button you can load a local gpx onto the map. (via Leaflet.FileLayer)</p>
 <p>From the form on the right you can load gpx from uploaded traces on OSM (they must be public or yours). You have to provide your OSM account username and password to perform basic authentication against API (to download the track, no credential is stored).</p>
 </div>
 <div style="position:absolute;top:0;right:0;width:30%; z-index:1;">
-	<form onsubmit="load(); return false;" action="#">
+	<form onsubmit="load(); return false;" action="#" method="get" id="form" name="form">
 	<fieldset><legend>Load from API</legend>
 		<label for="user">Your username</label><input type="text" id="user" name="user" value=""/>
 		<br/>
@@ -41,7 +41,7 @@ form{float:right;}
 
 <div id="map"></div>
 
-<script>
+<script type="text/javascript">
 var map=initMap(44.6,32.6,4);
 
 		var style = {color:'#0033ff', opacity: 0.5, fillOpacity: 0.5, weight: 5, clickable: true};
